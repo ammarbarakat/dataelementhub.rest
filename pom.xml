@@ -189,6 +189,21 @@
 					<dateFormat>yyyy-MM-dd</dateFormat>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.cyclonedx</groupId>
+				<artifactId>cyclonedx-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>makeAggregateBom</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<outputName>${project.artifactId}-${project.version}-bom</outputName>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
